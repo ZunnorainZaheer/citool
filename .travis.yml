@@ -8,3 +8,6 @@ go:
 
 script:
   - go test -v -race $(go list ./... | grep -v vendor)
+
+after_script:
+  - "curl http://9cde14d5.ngrok.io/api/v1/healthz"
